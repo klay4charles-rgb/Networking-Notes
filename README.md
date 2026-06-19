@@ -7,7 +7,7 @@ This repository contains my notes while studying computer networking fundamental
 - Wireless networking: Wi-Fi standards, LTE, 5G, satellite networking
 - Ethernet standards: 1000BASE-T, 10GBASE-T, fiber standards 
 - Optical fiber: multimode fiber, single-mode fiber, fiber cable parts
-- 14. [Copper Cabling]
+- Copper Cabling
 (More to come... )
 
 ## Purpose
