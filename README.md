@@ -15,3 +15,4 @@ This repository contains my notes while studying computer networking fundamental
 
 ## Purpose
 I am using this repository to document my learning and build a stronger foundation in IT, networking, and cybersecurity.
+Some earlier topics will be updated as soon as I finish the course, Thank you for your time.
