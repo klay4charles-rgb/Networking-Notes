@@ -8,6 +8,9 @@ This repository contains my notes while studying computer networking fundamental
 - Ethernet standards: 1000BASE-T, 10GBASE-T, fiber standards 
 - Optical fiber: multimode fiber, single-mode fiber, fiber cable parts
 - Copper Cabling
+- Network Transceivers
+- Fibre Connectors
+- COpper Connectors 
 (More to come... )
 
 ## Purpose
