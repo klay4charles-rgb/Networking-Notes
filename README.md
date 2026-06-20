@@ -10,7 +10,7 @@ This repository contains my notes while studying computer networking fundamental
 - Copper Cabling
 - Network Transceivers
 - Fibre Connectors
-- COpper Connectors 
+- Copper Connectors 
 (More to come... )
 
 ## Purpose
