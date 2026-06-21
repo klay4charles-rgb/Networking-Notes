@@ -3,14 +3,22 @@ My Documentation of learning Networking.
 This repository contains my notes while studying computer networking fundamentals.
 
 ## Topics covered
-- Network communication: unicast, broadcast, multicast, anycast
-- Wireless networking: Wi-Fi standards, LTE, 5G, satellite networking
-- Ethernet standards: 1000BASE-T, 10GBASE-T, fiber standards 
-- Optical fiber: multimode fiber, single-mode fiber, fiber cable parts
+- OSI Model
+- Networking Devices
+- Networking Functions
+- Designing the Cloud
+- Cloud Models
+- Introduction to IP
+- Common Ports
+- Other Useful Protocols
+- Network Communications
+- Wireless Networking
+- Ethernet Standards
+- Optical Fiber Cables
 - Copper Cabling
 - Network Transceivers
-- Fibre Connectors
-- Copper Connectors 
+- Fiber Connectors
+- Cable Connectors
 (More to come... )
 
 ## Purpose
