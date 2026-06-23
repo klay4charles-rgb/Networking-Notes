@@ -1,0 +1,61 @@
+# Introduction to IP
+
+## Overview
+Networking as a moving company:
+
+- Network topology = highways and roads
+- IP addresses = destination addresses
+- Packets = boxes inside the truck
+- Application data = contents inside the boxes
+
+IP's job is to move packets from one IP address to another.
+
+## TCP vs UDP
+
+### TCP
+- Connection-oriented
+- Reliable delivery
+- Uses acknowledgements (ACKs)
+- Retransmits lost packets
+- Supports flow control
+- Ensures packets arrive in order
+
+### UDP
+- Connectionless
+- Faster than TCP
+- No acknowledgements
+- No retransmissions
+- No flow control
+- Commonly used for gaming, streaming, and VoIP
+
+## Ports and Sockets
+
+- IP address identifies the device
+- Port number identifies the application/service
+- Ports help deliver data to the correct application
+
+### Port Ranges
+
+**Well-Known Ports**
+- 0–1023
+- Reserved for common services
+
+**Ephemeral Ports**
+- 1024–65535
+- Temporary client ports
+
+### Sockets
+A socket consists of:
+- IP Address
+- Protocol (TCP/UDP)
+- Port Number
+
+## Key Takeaways
+
+- IP handles addressing and routing.
+- TCP prioritizes reliability.
+- UDP prioritizes speed.
+- Ports identify services on a device.
+- Well-known ports are used by servers.
+- Ephemeral ports are typically used by clients.
+- TCP and UDP use separate port spaces.
