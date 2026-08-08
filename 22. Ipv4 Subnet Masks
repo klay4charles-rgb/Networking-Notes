@@ -1,0 +1,161 @@
+# IPv4 Subnet Masks
+
+## CIDR Block Notation
+
+CIDR stands for **Classless Inter-Domain Routing**.
+
+CIDR replaced the older **class-based system** of defining IPv4 networks and subnet masks.
+
+CIDR notation uses a `/` followed by the number of **network bits**.
+
+Examples:
+
+- `/8`
+- `/16`
+- `/24`
+- `/26`
+
+Example:
+
+`192.168.1.0/24`
+
+The `/24` means that the subnet mask contains **24 network bits**.
+
+---
+
+## Subnet Masks in Binary
+
+An IPv4 subnet mask contains **32 bits**, divided into four **8-bit octets**.
+
+A valid subnet mask consists of:
+
+**Continuous 1s followed by continuous 0s**
+
+Example for `/24`:
+
+`11111111.11111111.11111111.00000000`
+
+This contains:
+
+- **24 ones** = Network bits
+- **8 zeros** = Host bits
+
+Therefore:
+
+`/24 = 255.255.255.0`
+
+The `1`s in a subnet mask must be **contiguous**. They cannot randomly alternate between `1` and `0`.
+
+---
+
+## Binary to CIDR
+
+To convert a binary subnet mask into CIDR notation, simply **count the number of 1s**.
+
+Example:
+
+`11111111.11111111.11111111.00000000`
+
+Count the `1`s:
+
+`8 + 8 + 8 = 24`
+
+Therefore:
+
+`/24`
+
+---
+
+## Binary to Decimal
+
+Each bit in an IPv4 octet represents a specific decimal value:
+
+`128  64  32  16  8  4  2  1`
+
+Example:
+
+`11100000`
+
+The first three bits are `1`, so:
+
+`128 + 64 + 32 = 224`
+
+Therefore:
+
+`11100000 = 224`
+
+---
+
+## CIDR to Decimal Subnet Mask
+
+To convert CIDR notation into a decimal subnet mask:
+
+1. Convert the CIDR number into that many continuous `1`s.
+2. Fill the remaining bits with `0`s.
+3. Divide the 32 bits into four octets.
+4. Convert each octet from binary to decimal.
+
+Example: `/26`
+
+A `/26` means:
+
+- **26 ones**
+- **6 zeros**
+
+Binary:
+
+`11111111.11111111.11111111.11000000`
+
+Convert each octet:
+
+`11111111 = 255`
+
+`11111111 = 255`
+
+`11111111 = 255`
+
+`11000000 = 192`
+
+Therefore:
+
+`/26 = 255.255.255.192`
+
+---
+
+## Common CIDR Values
+
+| CIDR | Subnet Mask |
+|------|-------------|
+| `/8` | `255.0.0.0` |
+| `/16` | `255.255.0.0` |
+| `/24` | `255.255.255.0` |
+| `/25` | `255.255.255.128` |
+| `/26` | `255.255.255.192` |
+| `/27` | `255.255.255.224` |
+| `/28` | `255.255.255.240` |
+| `/29` | `255.255.255.248` |
+| `/30` | `255.255.255.252` |
+
+---
+
+## Key Takeaways
+
+- IPv4 subnet masks contain **32 bits**.
+- The bits are divided into **four 8-bit octets**.
+- Subnet masks contain **continuous 1s followed by continuous 0s**.
+- `1s` represent the **network portion**.
+- `0s` represent the **host portion**.
+- The CIDR number tells us **how many 1 bits are present**.
+- Binary subnet masks can be converted into decimal using the values:
+
+  `128 64 32 16 8 4 2 1`
+
+Example:
+
+`/24`
+
+`= 24 network bits + 8 host bits`
+
+`= 11111111.11111111.11111111.00000000`
+
+`= 255.255.255.0`
