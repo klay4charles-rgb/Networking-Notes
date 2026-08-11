@@ -1,0 +1,222 @@
+# IPv4 Subnet Calculations and VLSM
+
+## Why Subnet Networks?
+
+Instead of having one extremely large network where every device communicates within the same network, networks can be divided into smaller subnetworks.
+
+Routers can then connect these smaller networks together and route traffic between them.
+
+Subnetting helps with:
+
+- Organizing networks
+- Managing IP addresses efficiently
+- Reducing unnecessary network traffic
+- Creating networks of different sizes based on requirements
+
+---
+
+## Classful Subnetting
+
+Traditional IPv4 addressing used predefined address classes.
+
+The main classes were:
+
+| Class | Default Prefix | Default Subnet Mask | Network Bits | Host Bits |
+|------|------|------|------|------|
+| Class A | /8 | 255.0.0.0 | 8 | 24 |
+| Class B | /16 | 255.255.0.0 | 16 | 16 |
+| Class C | /24 | 255.255.255.0 | 24 | 8 |
+
+Knowing the default number of network bits for each class helps when calculating how many additional bits have been borrowed for subnetting.
+
+However, classful subnetting is restrictive because networks are forced into predefined sizes.
+
+---
+
+## Borrowing Host Bits
+
+Subnetting works by taking some of the bits originally available for hosts and using them as subnet bits.
+
+For example, consider a Class C network:
+
+192.168.1.0/24
+
+A Class C network originally has:
+
+- 24 network bits
+- 8 host bits
+
+If the prefix changes from /24 to /27:
+
+/27 - /24 = 3 borrowed bits
+
+Therefore:
+
+- Network + Subnet bits = 27
+- Borrowed subnet bits = 3
+- Remaining host bits = 5
+
+The more host bits we borrow, the more subnets we can create.
+
+However, borrowing bits also leaves fewer bits available for hosts in each subnet.
+
+---
+
+## Calculating the Number of Subnets
+
+The formula for calculating the number of possible subnets is:
+
+Number of Subnets = 2^s
+
+Where:
+
+s = Number of borrowed subnet bits
+
+Example:
+
+If 3 bits are borrowed:
+
+2^3 = 8
+
+Therefore, we can create:
+
+8 subnets
+
+---
+
+## Calculating the Number of Hosts
+
+The traditional IPv4 subnetting formula for calculating usable host addresses is:
+
+Usable Hosts = 2^h - 2
+
+Where:
+
+h = Number of host bits
+
+The subtraction of 2 accounts for:
+
+1. Network Address
+2. Broadcast Address
+
+These addresses normally cannot be assigned to hosts.
+
+Example:
+
+If there are 5 host bits:
+
+2^5 = 32 total addresses
+
+32 - 2 = 30 usable host addresses
+
+Therefore:
+
+5 host bits = 30 usable hosts
+
+---
+
+## Example Subnet Calculation
+
+Consider:
+
+192.168.1.0/27
+
+Since this started as a Class C /24 network:
+
+Borrowed Bits:
+
+27 - 24 = 3
+
+Number of Subnets:
+
+2^3 = 8 subnets
+
+Remaining Host Bits:
+
+32 - 27 = 5
+
+Total Addresses Per Subnet:
+
+2^5 = 32 addresses
+
+Usable Hosts Per Subnet:
+
+2^5 - 2 = 30 hosts
+
+Therefore:
+
+192.168.1.0/27
+
+provides:
+
+- 8 subnets relative to the original /24
+- 32 addresses per subnet
+- 30 usable host addresses per subnet
+
+---
+
+# VLSM - Variable Length Subnet Masks
+
+VLSM stands for:
+
+Variable Length Subnet Mask
+
+VLSM allows different subnets within a network design to use different subnet masks.
+
+Instead of forcing every subnet to have the same number of host addresses, the subnet size can be customized according to how many hosts are actually required.
+
+For example, a network may need separate subnets for:
+
+- 100 hosts
+- 50 hosts
+- 20 hosts
+- 10 hosts
+
+Using the same large subnet size for all four networks would waste many IP addresses.
+
+With VLSM, each network can receive a subnet mask appropriate for its required number of hosts.
+
+---
+
+## Why VLSM Is Useful
+
+VLSM allows us to adjust the balance between:
+
+Subnet Bits ↔ Host Bits
+
+More subnet bits:
+
+- More possible subnets
+- Fewer hosts per subnet
+
+More host bits:
+
+- Fewer possible subnets
+- More hosts per subnet
+
+This allows IP address space to be allocated much more efficiently.
+
+---
+
+## Key Takeaway
+
+Subnetting is essentially about deciding how the 32 bits of an IPv4 address should be divided.
+
+More bits used for the network/subnet portion means more networks but fewer hosts per network.
+
+More bits left for the host portion means fewer networks but more hosts per network.
+
+The main formulas are:
+
+Number of Subnets = 2^s
+
+Usable Hosts = 2^h - 2
+
+Where:
+
+s = Borrowed subnet bits
+
+h = Remaining host bits
+
+VLSM improves on fixed-size subnetting by allowing subnet sizes to be customized according to the actual requirements of each network.
+Basically, We calculated the number of Subnets and on each of those Subnets, how many hosts (devices) can be at a time.
